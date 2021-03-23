@@ -12,7 +12,7 @@ import ii887522.controlify.enums.Input
  * **Not Thread Safe**: it must not be assigned to integer
  * @see Control
  */
-open class ControlGroup(lifecycleOwner: LifecycleOwner, position: IntPoint, private val controls: Array<Control>) : ii887522.controlify.any.Control(position) {
+open class ControlGroup(lifecycleOwner: LifecycleOwner, position: IntPoint, private val controls: Array<Control>) : Control(position) {
   init {
     for (control in controls) {
       control.position.observe(lifecycleOwner) {
