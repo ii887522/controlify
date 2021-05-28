@@ -4,11 +4,7 @@ It is a GUI library based on Android that can help developers create mobile clie
 <img src="docs/style-guide.jpg" alt="Style Guide" width="360" /><br /><br />
 
 ## Table of Contents
-- [For developers reading this in GitHub](https://gitlab.com/ii887522/controlify#for-developers-reading-this-in-github)
-- [Prerequisites](https://gitlab.com/ii887522/controlify#prerequisites)
-
-## For developers reading this in GitHub
-Please go to https://gitlab.com/ii887522/controlify to start contributing instead.
+- [Prerequisites](https://github.com/ii887522/controlify#prerequisites)
 
 ## Prerequisites
 - [Visual Studio Code](https://code.visualstudio.com/)
