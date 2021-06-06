@@ -34,8 +34,8 @@ jobs:
           chmod 777 ./gradlew
           ./gradlew :lib:build
         env:
-          USERNAME: ${{ github.actor }}
-          PASSWORD: ${{ secrets.GRADLE_TOKEN }}
+          GITHUB_USERNAME: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GRADLE_TOKEN }}
       - name: Cleanup gradle cache
         run: |
           rm -f ~/.gradle/caches/modules-2/modules-2.lock
@@ -104,9 +104,9 @@ jobs:
           chmod 777 ./gradlew
           ./gradlew :lib:publish
         env:
-          USERNAME: ${{ github.actor }}
-          PASSWORD: ${{ secrets.GRADLE_TOKEN }}
-      - name: Cleanup Gradle cache
+          GITHUB_USERNAME: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GRADLE_TOKEN }}
+      - name: Cleanup gradle cache
         run: |
           rm -f ~/.gradle/caches/modules-2/modules-2.lock
           rm -f ~/.gradle/caches/modules-2/gc.properties
