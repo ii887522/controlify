@@ -54,17 +54,19 @@ dependencies {
 afterEvaluate {
   publishing {
     publications {
+      def artifactName = 'controlify'
+      def artifactVersion = '1.0.0'
       release(MavenPublication) {
         from components.release
-        groupId = 'ii887522'
-        artifactId = 'controlify'
-        version = '1.0.0'
+        groupId = System.getenv('GITHUB_USERNAME')
+        artifactId = artifactName
+        version = artifactVersion
       }
       debug(MavenPublication) {
         from components.debug
-        groupId = 'ii887522'
-        artifactId = 'controlify-debug'
-        version = '1.0.0'
+        groupId = System.getenv('GITHUB_USERNAME')
+        artifactId = "$artifactName-debug"
+        version = artifactVersion
       }
     }
     repositories {
@@ -72,8 +74,8 @@ afterEvaluate {
         name = 'GithubPackages'
         url 'https://maven.pkg.github.com/ii887522/controlify'
         credentials {
-          username = System.getenv('USERNAME')
-          password = System.getenv('PASSWORD')
+          username = System.getenv('GITHUB_USERNAME')
+          password = System.getenv('GITHUB_TOKEN')
         }
       }
     }
