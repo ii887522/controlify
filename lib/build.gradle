@@ -72,8 +72,8 @@ afterEvaluate {
         name = 'GithubPackages'
         url 'https://maven.pkg.github.com/ii887522/controlify'
         credentials {
-          username = 'ii887522'
-          password = '<access-token>'
+          username = System.getenv('USERNAME')
+          password = System.getenv('PASSWORD')
         }
       }
     }
