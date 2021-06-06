@@ -33,6 +33,9 @@ jobs:
         run: |
           chmod 777 ./gradlew
           ./gradlew :lib:build
+        env:
+          USERNAME: ${{ github.actor }}
+          PASSWORD: ${{ secrets.GRADLE_TOKEN }}
       - name: Cleanup gradle cache
         run: |
           rm -f ~/.gradle/caches/modules-2/modules-2.lock
