@@ -27,13 +27,20 @@ jobs:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-            build
-            lib/build
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
             ${{ runner.os }}-
+      - name: Cache outputs
+        id: outputs-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            build
+            lib/build
+          key: ${{ runner.os }}-gradle-${{ hashFiles('lib/src/**/*') }}
       - name: Build project
+        if: steps.outputs-cache.outputs.cache-hit != 'true'
         run: |
           chmod 777 ./gradlew
           ./gradlew :lib:build
@@ -60,12 +67,17 @@ jobs:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-            build
-            lib/build
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle', '**/gradle-wrapper.properties') }}
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
             ${{ runner.os }}-
+      - name: Cache outputs
+        uses: actions/cache@v2
+        with:
+          path: |
+            build
+            lib/build
+          key: ${{ runner.os }}-gradle-${{ hashFiles('lib/src/**/*') }}
       - name: Test project
         run: |
           chmod 777 ./gradlew
@@ -97,12 +109,17 @@ jobs:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-            build
-            lib/build
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
             ${{ runner.os }}-
+      - name: Cache outputs
+        uses: actions/cache@v2
+        with:
+          path: |
+            build
+            lib/build
+          key: ${{ runner.os }}-gradle-${{ hashFiles('lib/src/**/*') }}
       - name: Deploy project
         run: |
           chmod 777 ./gradlew
