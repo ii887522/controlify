@@ -4,7 +4,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
-class ScoreModel(lifecycleOwner: LifecycleOwner, max: Int, onValueMax: () -> Unit, canIncrement: MutableLiveData<Boolean>, canReset: LiveData<Boolean>) {
+class ScoreModel(lifecycleOwner: LifecycleOwner, max: Int = Int.MAX_VALUE, canIncrement: MutableLiveData<Boolean>, canReset: LiveData<Boolean>, onValueMax: () -> Unit = { }) {
   private val _value = MutableLiveData(0)
   val value: LiveData<Int> get() = _value
 
