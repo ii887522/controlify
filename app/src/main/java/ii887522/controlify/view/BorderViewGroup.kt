@@ -24,8 +24,8 @@ class BorderViewGroup(context: Context, attr: AttributeSet) : View(context, attr
       BorderView(Border(IntRect(IntPoint(16, 0), IntSize(8, 8)), 1)),
       BorderView(Border(IntRect(IntPoint(28, 0), IntSize(8, 8)), 2)),
       BorderView(Border(IntRect(IntPoint(40, 0), IntSize(8, 8)), 2), Color.RED),
-      BorderView(Border(IntRect(IntPoint(52, 0), IntSize(8, 8)), 2), Color.RED, Map(IntSize(4, 4)), Input.UP),
-      BorderView(Border(IntRect(IntPoint(64, 0), IntSize(8, 8)), 2), Color.RED, Map(IntSize(6, 6)), Input.RIGHT)
+      BorderView(Border(IntRect(IntPoint(52, 0), IntSize(8, 8)), 2), Color.RED, map = Map(IntSize(4, 4)), cellValue = Input.UP),
+      BorderView(Border(IntRect(IntPoint(64, 0), IntSize(8, 8)), 2), Color.RED, map = Map(IntSize(6, 6)), cellValue = Input.RIGHT)
     )
   }
 

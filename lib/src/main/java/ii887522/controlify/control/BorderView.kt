@@ -14,7 +14,7 @@ import ii887522.controlify.struct.Border
  *
  * @see Control
  */
-class BorderView<T : Enum<T>>(private val border: Border, private val p_color: Int = Color.BLACK, map: Map<T>? = null, cellValue: T? = null) : Control(border.rect.position) {
+class BorderView<T : Enum<T>>(private val border: Border = Border(), private val p_color: Int = Color.BLACK, map: Map<T>? = null, cellValue: T? = null) : Control(border.rect.position) {
   private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
     color = p_color
   }

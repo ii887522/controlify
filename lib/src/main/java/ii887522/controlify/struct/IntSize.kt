@@ -2,7 +2,7 @@ package ii887522.controlify.struct
 
 import ii887522.oxy.any.Calculatable
 
-data class IntSize(val w: Int = 0, val h: Int = 0) : Calculatable<IntSize> {
+data class IntSize(val w: Int = 1, val h: Int = 1) : Calculatable<IntSize> {
   override fun plus(that: IntSize) = IntSize(w + that.w, h + that.h)
   override fun minus(that: IntSize) = IntSize(w - that.w, h - that.h)
   override fun times(that: IntSize) = IntSize(w * that.w, h * that.h)

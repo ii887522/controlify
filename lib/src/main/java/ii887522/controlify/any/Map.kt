@@ -6,7 +6,7 @@ import ii887522.controlify.struct.IntSize
 /**
  * **Not Thread Safe**
  */
-class Map<T : Enum<T>>(size: IntSize) {
+class Map<T : Enum<T>>(size: IntSize = IntSize(1, 1)) {
   private val cells = IntArray(size.w * size.h)
   private val width = size.w
 
